@@ -1,0 +1,18 @@
+name: Enforce Rust formatting
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
+
+jobs:
+  rustfmt:
+    name: rustfmt
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Rust
+        run: rustup update --no-self-update stable && rustup default stable
+      - name: Check formatting
+        run: cargo fmt --all -- --check

@@ -1,0 +1,11 @@
+{
+    "name": "Enforce Rust formatting",
+    "description": "Run cargo fmt to ensure code is properly formatted.",
+    "iconName": "rust",
+    "categories": [
+        "Rust"
+    ],
+    "filePatterns": [
+        "^Cargo.toml$"
+    ]
+}
