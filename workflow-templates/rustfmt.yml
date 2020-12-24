@@ -12,7 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install Rust
-        run: rustup update --no-self-update stable && rustup default stable
-      - name: Check formatting
-        run: cargo fmt --all -- --check
+      - uses: sfackler/actions/rustup
+      - uses: sfackler/actions/rustfmt
